@@ -1,1 +1,0 @@
-export { default } from "file:///C:/Users/rkita/Documents/Ryo/Projects/Personal%20Website/my-portfolio/node_modules/@nuxt/vite-builder/dist/runtime/vite-node.mjs"
