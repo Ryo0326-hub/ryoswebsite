@@ -1,5 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html {
   scroll-behavior: smooth;
+}
+
+html, body {
+  background-color: #B0C4DE; 
+  margin: 0;
+  padding: 0;
 }
 
 :root {
@@ -81,3 +91,164 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* Section-specific styles */
+
+/* Styling the section headers */
+.section-header {
+  font-size: 2.25rem; /* Slightly smaller font */
+  font-weight: 800;   /* Bold text */
+  display: flex;
+  align-items: center; /* Vertically align icon and text */
+  justify-content: center; /* Center-align the text and icon */
+  margin-bottom: 0rem; /* Reduce spacing below the title */
+}
+
+/* Styling the header icons */
+.section-header img {
+  margin-right: 1rem; /* Adds space between icon and title */
+  width: 28px; /* Icon width */
+  height: 28px; /* Icon height */
+}
+
+/* Adjust section padding for About Me */
+#about {
+  padding-top: 0rem; /* Reduce top space to move content upwards */
+  padding-bottom: 0rem; /* Adjust bottom space */
+}
+
+/* Animations for section icons */
+.icon-pulse {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.icon-bounce {
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.icon-spin-slow {
+  animation: spin-slow 6s linear infinite;
+}
+
+/* Animation keyframes */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes spin-slow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Refine description for About Me */
+#about p {
+  margin: 0 auto; /* Center the paragraph */
+  width: 50%; /* Reduce width for more vertical alignment */
+  line-height: 1.8; /* Increase text line spacing */
+}
+
+/* Refine About Me Layout */
+#about {
+  padding-top: 0rem; /* Adjust top padding for better placement */
+  padding-bottom: 0rem;
+}
+
+#about p {
+  margin: 2rem auto; /* Add top margin between photo and description */
+  width: 60%; /* Further reduce text width for improved vertical flow */
+  line-height: 1.85; /* Increase line spacing */
+  text-align: justify; /* Justify text for a clean look */
+}
+
+#projects {
+  padding-top: -8rem; /* Adjust positive vertical spacing */
+  padding-bottom: 0rem;
+  margin: 0 auto; /* Center horizontally */
+  width: 80%; /* Keep section compact */
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+.project-carousel {
+  display: flex;
+  gap: 1.5rem; /* Add space between project cards */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  scroll-snap-type: x mandatory; /* Ensure cards snap into place */
+  padding: 0 1.5rem; /* Add side padding to prevent edges from clipping */
+}
+
+/* Updated Project Card Styling */
+.project-card {
+  flex: 0 0 25%; /* Smaller width to show 3 cards at a time */
+  aspect-ratio: 1; /* Make the card a square */
+  scroll-snap-align: center; /* Center each card during scroll */
+  background: white; /* Background color */
+  border-radius: 12px; /* More pronounced rounded corners */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2), 
+              0 4px 6px rgba(0, 0, 0, 0.1); /* Add stronger shadow layers */
+  position: relative; /* Required for aurora positioning */
+  padding: 1rem; /* Inner padding */
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth animation transitions */
+  overflow: hidden; /* Remove any overflowing aurora effect */
+}
+
+.project-card:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3), 
+              0 6px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Aurora Effect Around the Card */
+.project-card:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Limit aurora glow within card dimensions */
+  height: 100%; /* Match width and height of the card */
+  border-radius: 50%; /* Keep the glow circular */
+  background: radial-gradient(circle, rgba(141, 211, 255, 0.3), transparent);
+  animation: pulse-aurora 3s infinite; /* Glowing animation */
+  z-index: -1; /* Place it behind the card */
+}
+
+/* Image Styling within the Card */
+.project-card img {
+  width: 100%; /* Full width of the card */
+  height: 70%; /* Take up 70% of the card height */
+  object-fit: cover; /* Crop image proportionally */
+  border-radius: 8px; /* Match card border radius */
+}
+
+/* Smaller Aurora Animation */
+@keyframes pulse-aurora {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.05); /* Reduce scale to prevent overflow issues */
+    opacity: 0.8;
+  }
+}
+
+
+
