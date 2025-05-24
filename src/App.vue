@@ -5,8 +5,7 @@
     <main class="pt-20">
       <Hero />
       <About />
-      <Projects />
-      <Experience />
+      <Projandexp />
     </main>
   </div>
 </template>
@@ -15,8 +14,7 @@
 import NavBar     from './components/NavBar.vue'
 import Hero       from './components/Hero.vue'
 import About      from './components/About.vue'
-import Projects   from './components/Projects.vue'
-import Experience from './components/Experience.vue'
+import Projandexp from './components/Projandexp.vue'
 </script>
 
 

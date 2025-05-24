@@ -104,11 +104,11 @@ button:focus-visible {
   margin-bottom: 0rem; /* Reduce spacing below the title */
 }
 
-/* Styling the header icons */
+/* Styling the header icons - making them bigger */
 .section-header img {
   margin-right: 1rem; /* Adds space between icon and title */
-  width: 28px; /* Icon width */
-  height: 28px; /* Icon height */
+  width: 42px; /* Increased from 28px */
+  height: 42px; /* Increased from 28px */
 }
 
 /* Adjust section padding for About Me */
@@ -249,6 +249,7 @@ button:focus-visible {
     opacity: 0.8;
   }
 }
+
 
 
 

@@ -3,8 +3,7 @@
     <ul class="nav-list">
       <li><a href="#hero"       class="nav-link">Home</a></li>
       <li><a href="#about"      class="nav-link">About</a></li>
-      <li><a href="#projects"   class="nav-link">Projects</a></li>
-      <li><a href="#experience" class="nav-link">Experience</a></li>
+      <li><a href="#projandexp" class="nav-link">Projects and Experiences</a></li>
     </ul>
   </nav>
 </template>
