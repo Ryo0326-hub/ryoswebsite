@@ -1,7 +1,7 @@
 <template>
-  <section id="about" class="py-16 bg-gray-100 relative">
+  <section id="about" class="py-8 md:py-16 relative" style="background: linear-gradient(to bottom, #f9fafb 0%, #e5e7eb 30%, #9ca3af 70%, #8FA4C7 100%);">
     <!-- About Me Title with Icon -->
-    <div class="section-header mb-1/2">
+    <div class="section-header mb-4 md:mb-8">
       <img
         src="../assets/infinity.png"
         alt="Infinity Symbol"
@@ -10,15 +10,15 @@
       <h2>About Me</h2>
     </div>
     <!-- Photo and Main Description -->
-    <div class="max-w-4xl mx-auto flex flex-col items-center">
-      <div class="parallelogram-container mb-4">
+    <div class="max-w-4xl mx-auto flex flex-col items-center px-4">
+      <div class="parallelogram-container mb-6 md:mb-4">
         <img
           src="../assets/ryo2.jpg"
           alt="Ryo's Photo"
           class="w-full h-full object-cover"
         />
       </div>
-      <div class="max-w-3xl text-lg leading-relaxed text-center space-y-4">
+      <div class="max-w-3xl text-base md:text-lg leading-relaxed text-center space-y-3 md:space-y-4">
         <p>
           Hi, I’m Ryo Kitano, a second-year math student at the University of Waterloo majoring in
           Mathematical Finance and Combinatorics & Optimization. I'm passionate about applying technical and analytical
@@ -32,12 +32,12 @@
         </p>
 
         <p>
-          When I'm not building financial models, you'll find me watching NBA games. Basketball fascinates me because there are numbers everywhere. 
-          I love the mathematical beauty in analyzing player performance and team mechanics. 
+          When I'm not building financial models, you'll find me watching NBA games. Basketball fascinates me because there are numbers everywhere.
+          I love the mathematical beauty in analyzing player performance and team mechanics.
         </p>
 
         <p>
-          Above all, I aspire to become a quant. I want to unveil the hidden patterns in financial data that are seamingly impossible to see. 
+          Above all, I aspire to become a quant. I want to unveil the hidden patterns in financial data that are seamingly impossible to see.
           I will continuously challenge myself both academically and as a person while being excited for what the future holds for me and the world.
         </p>
       </div>
@@ -50,21 +50,38 @@
 </script>
 
 <style scoped>
+/* Mobile-first parallelogram container */
 .parallelogram-container {
-  width: 250px;
-  height: 250px;
+  width: 200px; /* Smaller on mobile */
+  height: 200px;
   position: relative;
   overflow: hidden;
-  transform: skew(-5deg); /* Further reduced skew angle from -10deg to -5deg */
+  transform: skew(-3deg); /* Less skew on mobile for better visibility */
   display: inline-block;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Lighter shadow on mobile */
 }
 
 .parallelogram-container img {
-  transform: skew(5deg) scale(1.15); /* Added scale(1.15) to zoom in by 15% */
+  transform: skew(3deg) scale(1.1); /* Less skew and scale on mobile */
   position: relative;
-  left: -5px; /* Reduced offset from -10px to -5px */
-  width: calc(100% + 10px); /* Adjusted width calculation */
-  object-position: center; /* Center the image focus */
+  left: -3px; /* Smaller offset */
+  width: calc(100% + 6px); /* Adjusted width calculation */
+  object-position: center;
+}
+
+/* Desktop parallelogram styles */
+@media (min-width: 768px) {
+  .parallelogram-container {
+    width: 250px; /* Desktop size */
+    height: 250px;
+    transform: skew(-5deg); /* Desktop skew */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Desktop shadow */
+  }
+
+  .parallelogram-container img {
+    transform: skew(5deg) scale(1.15); /* Desktop transform */
+    left: -5px; /* Desktop offset */
+    width: calc(100% + 10px); /* Desktop width */
+  }
 }
 </style>

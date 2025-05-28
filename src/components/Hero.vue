@@ -1,5 +1,5 @@
 <template>
-  <section id="hero" class="min-h-screen flex flex-col justify-center items-center bg-gray-50">
+  <section id="hero" class="min-h-screen flex flex-col justify-center items-center bg-gray-50 px-4">
     <!-- Spinning Mathematics Icon -->
     <img
       src="../assets/mathematics.png"
@@ -7,8 +7,8 @@
       class="icon-spin-slow mb-6"
       style="width: 60px; height: 60px;"
     />
-    <h1 class="text-5xl font-bold mb-4">Ryo Kitano</h1>
-    <p class="text-xl max-w-md text-center mb-8">
+    <h1 class="text-3xl md:text-5xl font-bold mb-4 text-center">Ryo Kitano</h1>
+    <p class="text-lg md:text-xl max-w-md text-center mb-8">
       Math Finance & CO @ UWaterloo
     </p>
 
@@ -46,8 +46,15 @@ export default defineComponent({ name: 'Hero' })
   align-items: center;
   color: #4b5563;
   transition: color 0.2s, transform 0.2s;
-  font-size: 1rem;
-  margin-right: 30px; /* Reduced spacing between links from 60px to 30px */
+  font-size: 0.9rem; /* Slightly smaller on mobile */
+  margin-right: 20px; /* Smaller spacing on mobile */
+}
+
+@media (min-width: 768px) {
+  .contact-link {
+    font-size: 1rem; /* Original size on desktop */
+    margin-right: 30px; /* Original spacing on desktop */
+  }
 }
 
 .contact-link:last-child {

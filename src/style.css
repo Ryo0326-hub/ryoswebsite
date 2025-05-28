@@ -7,9 +7,11 @@ html {
 }
 
 html, body {
-  background-color: #B0C4DE; 
+  background-color: #f3f4f6; /* Changed to match content background */
   margin: 0;
   padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 :root {
@@ -18,8 +20,8 @@ html, body {
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: #374151; /* Changed to dark gray for better readability */
+  background-color: #f3f4f6;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -38,10 +40,9 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  /* Removed conflicting flex styles that were centering everything */
 }
 
 h1 {
@@ -73,10 +74,10 @@ button:focus-visible {
 }
 
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  /* Removed fixed max-width and centering for mobile compatibility */
 }
 
 @media (prefers-color-scheme: light) {
@@ -96,19 +97,38 @@ button:focus-visible {
 
 /* Styling the section headers */
 .section-header {
-  font-size: 2.25rem; /* Slightly smaller font */
+  font-size: 1.5rem; /* Mobile-first smaller size */
   font-weight: 800;   /* Bold text */
   display: flex;
   align-items: center; /* Vertically align icon and text */
   justify-content: center; /* Center-align the text and icon */
   margin-bottom: 0rem; /* Reduce spacing below the title */
+  padding: 0; /* Remove padding that causes centering issues */
+  width: 100%; /* Ensure full width for proper centering */
+  text-align: center; /* Force center alignment */
+}
+
+/* Responsive typography for section headers */
+@media (min-width: 768px) {
+  .section-header {
+    font-size: 2.25rem; /* Desktop size */
+    padding: 0; /* Remove padding on desktop */
+  }
 }
 
 /* Styling the header icons - making them bigger */
 .section-header img {
-  margin-right: 1rem; /* Adds space between icon and title */
-  width: 42px; /* Increased from 28px */
-  height: 42px; /* Increased from 28px */
+  margin-right: 0.5rem; /* Smaller margin on mobile */
+  width: 32px; /* Smaller on mobile */
+  height: 32px;
+}
+
+@media (min-width: 768px) {
+  .section-header img {
+    margin-right: 1rem; /* Desktop spacing */
+    width: 42px; /* Desktop size */
+    height: 42px;
+  }
 }
 
 /* Adjust section padding for About Me */
@@ -158,97 +178,32 @@ button:focus-visible {
   }
 }
 
-/* Refine description for About Me */
-#about p {
-  margin: 0 auto; /* Center the paragraph */
-  width: 50%; /* Reduce width for more vertical alignment */
-  line-height: 1.8; /* Increase text line spacing */
-}
-
-/* Refine About Me Layout */
+/* Mobile-first About Me styles */
 #about {
-  padding-top: 0rem; /* Adjust top padding for better placement */
+  padding-top: 0rem;
   padding-bottom: 0rem;
 }
 
 #about p {
-  margin: 2rem auto; /* Add top margin between photo and description */
-  width: 60%; /* Further reduce text width for improved vertical flow */
-  line-height: 1.85; /* Increase line spacing */
-  text-align: justify; /* Justify text for a clean look */
+  margin: 1rem auto; /* Smaller margin on mobile */
+  width: 90%; /* Full width on mobile with small margins */
+  line-height: 1.6; /* Comfortable line spacing for mobile */
+  text-align: left; /* Left-align for better mobile readability */
+  padding: 0 1rem; /* Add horizontal padding */
 }
 
-#projects {
-  padding-top: -8rem; /* Adjust positive vertical spacing */
-  padding-bottom: 0rem;
-  margin: 0 auto; /* Center horizontally */
-  width: 80%; /* Keep section compact */
-  overflow-x: hidden; /* Prevent horizontal overflow */
-}
-
-.project-carousel {
-  display: flex;
-  gap: 1.5rem; /* Add space between project cards */
-  overflow-x: auto; /* Enable horizontal scrolling */
-  scroll-snap-type: x mandatory; /* Ensure cards snap into place */
-  padding: 0 1.5rem; /* Add side padding to prevent edges from clipping */
-}
-
-/* Updated Project Card Styling */
-.project-card {
-  flex: 0 0 25%; /* Smaller width to show 3 cards at a time */
-  aspect-ratio: 1; /* Make the card a square */
-  scroll-snap-align: center; /* Center each card during scroll */
-  background: white; /* Background color */
-  border-radius: 12px; /* More pronounced rounded corners */
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2), 
-              0 4px 6px rgba(0, 0, 0, 0.1); /* Add stronger shadow layers */
-  position: relative; /* Required for aurora positioning */
-  padding: 1rem; /* Inner padding */
-  text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s; /* Smooth animation transitions */
-  overflow: hidden; /* Remove any overflowing aurora effect */
-}
-
-.project-card:hover {
-  transform: scale(1.05); /* Slight zoom effect */
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3), 
-              0 6px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
-}
-
-/* Aurora Effect Around the Card */
-.project-card:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%; /* Limit aurora glow within card dimensions */
-  height: 100%; /* Match width and height of the card */
-  border-radius: 50%; /* Keep the glow circular */
-  background: radial-gradient(circle, rgba(141, 211, 255, 0.3), transparent);
-  animation: pulse-aurora 3s infinite; /* Glowing animation */
-  z-index: -1; /* Place it behind the card */
-}
-
-/* Image Styling within the Card */
-.project-card img {
-  width: 100%; /* Full width of the card */
-  height: 70%; /* Take up 70% of the card height */
-  object-fit: cover; /* Crop image proportionally */
-  border-radius: 8px; /* Match card border radius */
-}
-
-/* Smaller Aurora Animation */
-@keyframes pulse-aurora {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 0.6;
-  }
-  50% {
-    transform: scale(1.05); /* Reduce scale to prevent overflow issues */
-    opacity: 0.8;
+/* Desktop styles for About Me */
+@media (min-width: 768px) {
+  #about p {
+    margin: 2rem auto; /* Desktop margin */
+    width: 60%; /* Desktop width */
+    line-height: 1.85; /* Desktop line spacing */
+    text-align: justify; /* Justify text on desktop */
+    padding: 0; /* Remove padding on desktop */
   }
 }
+
+/* These project styles are now handled in the component-specific CSS */
 
 
 
