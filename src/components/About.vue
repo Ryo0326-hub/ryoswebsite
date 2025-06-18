@@ -1,26 +1,14 @@
 <template>
-  <section id="about" class="py-8 md:py-16 relative" style="background: linear-gradient(to bottom, #f9fafb 0%, #e5e7eb 30%, #9ca3af 70%, #8FA4C7 100%);">
+  <section id="about" class="py-8 md:py-16 relative about-bg">
     <!-- About Me Title with Icon -->
     <div class="section-header mb-4 md:mb-8">
-      <img
-        src="../assets/infinity.png"
-        alt="Infinity Symbol"
-        class="icon-pulse"
-      />
       <h2>About Me</h2>
     </div>
     <!-- Photo and Main Description -->
     <div class="max-w-4xl mx-auto flex flex-col items-center px-4">
-      <div class="parallelogram-container mb-6 md:mb-4">
-        <img
-          src="../assets/ryo2.jpg"
-          alt="Ryo's Photo"
-          class="w-full h-full object-cover"
-        />
-      </div>
       <div class="max-w-3xl text-base md:text-lg leading-relaxed text-center space-y-3 md:space-y-4">
         <p>
-          Hi, I’m Ryo Kitano, a second-year math student at the University of Waterloo majoring in
+          Hi, I'm Ryo Kitano, a second-year math student at the University of Waterloo majoring in
           Mathematical Finance and Combinatorics & Optimization. I'm passionate about applying technical and analytical
           skills in software development and quantitative research.
         </p>
@@ -50,6 +38,12 @@
 </script>
 
 <style scoped>
+.about-bg {
+  position: relative;
+  min-height: 400px;
+  background: #fff;
+}
+
 /* Mobile-first parallelogram container */
 .parallelogram-container {
   width: 200px; /* Smaller on mobile */

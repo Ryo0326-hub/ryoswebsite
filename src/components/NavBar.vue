@@ -25,7 +25,7 @@
 
 /* dark-blue text, a bit larger, hover to dark-gray */
 .nav-link {
-  color: #4682B4;        /* dark blue */
+  color: #374151;        /* dark gray to match other sections */
   font-size: 1.125rem;   /* ~18px = slightly larger */
   text-decoration: none;
   transition: color 0.2s;
@@ -41,6 +41,6 @@ nav {
   left:     0;         /* ← ensure this is here */
   width:    100%;      /* or 100vw if you want no horizontal scroll */
   z-index:  50;
-  background-color: #F5F5F5;
+  background-color: #F8F8FF;
 }
 </style>

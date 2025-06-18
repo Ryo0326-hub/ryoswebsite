@@ -1,75 +1,38 @@
 <template>
-  <section id="projandexp" class="py-10 md:py-20" style="background: linear-gradient(to bottom, #8FA4C7 0%, #7B91B8 50%, #6B7FA8 100%);">
+  <section id="projandexp" class="py-10 md:py-20 projandexp-bg">
     <!-- Projects and Experiences Title with Icon -->
     <div class="section-header mb-6 md:mb-8">
-      <img
-        src="../assets/pi.png"
-        alt="Pi Symbol"
-        class="icon-bounce"
-      />
       <h2>Projects and Experiences</h2>
     </div>
 
     <!-- Projects Section -->
-    <div class="subsection-container mb-10 md:mb-16">
+    <div class="subsection-container project-banner mb-10 md:mb-16">
       <h3 class="subsection-title">Projects</h3>
       <div class="project-carousel-container">
-        <div class="project-carousel" ref="carousel" @scroll="handleScroll">
+        <div class="project-carousel" ref="carousel">
           <div class="project-card">
-            <h4 class="text-lg font-semibold">Financial Risk Model</h4>
-            <p class="text-sm mt-2">
-              A quantitative model to forecast market risks using Python and Monte Carlo simulations.
-            </p>
+            <h4 class="text-lg font-semibold">UWJSA Website</h4>
+            <a href="https://github.com/Ryo0326-hub/uwjsa-website" target="_blank" class="text-blue-600 underline">View on GitHub</a>
           </div>
           <div class="project-card">
-            <h4 class="text-lg font-semibold">Portfolio Optimization</h4>
-            <p class="text-sm mt-2">
-              Tool for maximizing returns while managing risk using Mean-Variance Optimization.
-            </p>
+            <h4 class="text-lg font-semibold">Tesla Stock Prediction using GAN</h4>
+            <a href="https://github.com/Ryo0326-hub/tesla-gan/tree/master" target="_blank" class="text-blue-600 underline">View on GitHub</a>
           </div>
           <div class="project-card">
-            <h4 class="text-lg font-semibold">Trading Bot</h4>
-            <p class="text-sm mt-2">
-              Built a bot to execute trades automatically, integrating trading APIs and machine learning.
-            </p>
+            <h4 class="text-lg font-semibold">Tesla Stock Prediction using LSTM</h4>
+            <a href="https://github.com/Ryo0326-hub/tesla-lstm/tree/master" target="_blank" class="text-blue-600 underline">View on GitHub</a>
           </div>
           <div class="project-card">
-            <h4 class="text-lg font-semibold">Time Series Forecasting</h4>
-            <p class="text-sm mt-2">
-              Developed a financial time series model using ARIMA to predict stock prices.
-            </p>
-          </div>
-          <!-- Duplicate cards for infinite scroll -->
-          <div class="project-card">
-            <h4 class="text-lg font-semibold">Financial Risk Model</h4>
-            <p class="text-sm mt-2">
-              A quantitative model to forecast market risks using Python and Monte Carlo simulations.
-            </p>
-          </div>
-          <div class="project-card">
-            <h4 class="text-lg font-semibold">Portfolio Optimization</h4>
-            <p class="text-sm mt-2">
-              Tool for maximizing returns while managing risk using Mean-Variance Optimization.
-            </p>
-          </div>
-          <div class="project-card">
-            <h4 class="text-lg font-semibold">Trading Bot</h4>
-            <p class="text-sm mt-2">
-              Built a bot to execute trades automatically, integrating trading APIs and machine learning.
-            </p>
-          </div>
-          <div class="project-card">
-            <h4 class="text-lg font-semibold">Time Series Forecasting</h4>
-            <p class="text-sm mt-2">
-              Developed a financial time series model using ARIMA to predict stock prices.
-            </p>
+            <h4 class="text-lg font-semibold">Pizza-order-bot</h4>
+            <p class="text-sm mt-2">Programmatically orders pizza from pizzahut.</p>
+            <a href="https://github.com/Ryo0326-hub/pizza-order-bot" target="_blank" class="text-blue-600 underline">View on GitHub</a>
           </div>
         </div>
       </div>
     </div>
 
     <!-- Experiences Section -->
-    <div class="subsection-container pb-16 md:pb-20">
+    <div class="subsection-container experiences-bg pb-16 md:pb-20">
       <h3 class="subsection-title">Experiences</h3>
       <div class="experience-list">
         <!-- Experience 1 -->
@@ -113,63 +76,21 @@
 </template>
 
 <script>
-import { defineComponent, ref, onMounted } from 'vue'
+import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: 'Projandexp',
-  setup() {
-    const carousel = ref(null)
-    let isScrolling = false
-
-    const handleScroll = () => {
-      if (isScrolling) return
-
-      const container = carousel.value
-      if (!container) return
-
-      const scrollLeft = container.scrollLeft
-      const scrollWidth = container.scrollWidth
-      const clientWidth = container.clientWidth
-
-      // Calculate the width of one set of cards (4 cards)
-      const cardWidth = container.querySelector('.project-card')?.offsetWidth || 0
-      const gap = 16 // 1rem gap in pixels
-      const oneSetWidth = (cardWidth + gap) * 4
-
-      // If scrolled to the end, jump back to the beginning of the second set
-      if (scrollLeft + clientWidth >= scrollWidth - 10) {
-        isScrolling = true
-        container.scrollLeft = oneSetWidth
-        setTimeout(() => { isScrolling = false }, 50)
-      }
-
-      // If scrolled to the beginning, jump to the end of the first set
-      if (scrollLeft <= 10) {
-        isScrolling = true
-        container.scrollLeft = oneSetWidth
-        setTimeout(() => { isScrolling = false }, 50)
-      }
-    }
-
-    onMounted(() => {
-      // Start at the beginning of the second set for seamless looping
-      if (carousel.value) {
-        const cardWidth = carousel.value.querySelector('.project-card')?.offsetWidth || 0
-        const gap = 16
-        const oneSetWidth = (cardWidth + gap) * 4
-        carousel.value.scrollLeft = oneSetWidth
-      }
-    })
-
-    return {
-      carousel,
-      handleScroll
-    }
-  }
+  name: 'Projandexp'
 })
 </script>
 
 <style scoped>
+.projandexp-bg {
+  background: #fff;
+  border-radius: 12px;
+  padding-top: 2.5rem;
+  padding-bottom: 5rem;
+}
+
 /* Mobile-first subsection styling */
 .subsection-container {
   max-width: 1200px;
@@ -359,5 +280,16 @@ export default defineComponent({
   .experience-description {
     font-size: 0.875rem;
   }
+}
+
+.project-banner {
+  background: url('../assets/grid.jpg') center center / cover no-repeat;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+.experiences-bg {
+  background: #fff;
+  border-radius: 12px;
 }
 </style>

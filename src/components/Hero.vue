@@ -1,5 +1,5 @@
 <template>
-  <section id="hero" class="min-h-screen flex flex-col justify-center items-center bg-gray-50 px-4">
+  <section id="hero" class="min-h-screen flex flex-col justify-center items-center bg-hero px-4">
     <!-- Spinning Mathematics Icon -->
     <img
       src="../assets/mathematics.png"
@@ -68,5 +68,9 @@ export default defineComponent({ name: 'Hero' })
 
 .contact-icon {
   margin-right: 0.5rem;
+}
+
+.bg-hero {
+  background: url('../assets/cloud.jpg') center center / cover no-repeat;
 }
 </style>
