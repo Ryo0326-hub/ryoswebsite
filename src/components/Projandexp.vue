@@ -1,5 +1,5 @@
 <template>
-  <section id="projandexp" class="py-10 md:py-20 projandexp-bg">
+  <section id="projandexp" class="py-10 md:py-20">
     <!-- Projects and Experiences Title with Icon -->
     <div class="section-header mb-6 md:mb-8">
       <h2>Projects and Experiences</h2>
@@ -11,10 +11,6 @@
       <div class="project-carousel-container">
         <div class="project-carousel" ref="carousel">
           <div class="project-card">
-            <h4 class="text-lg font-semibold">UWJSA Website</h4>
-            <a href="https://github.com/Ryo0326-hub/uwjsa-website" target="_blank" class="text-blue-600 underline">View on GitHub</a>
-          </div>
-          <div class="project-card">
             <h4 class="text-lg font-semibold">Tesla Stock Prediction using GAN</h4>
             <a href="https://github.com/Ryo0326-hub/tesla-gan/tree/master" target="_blank" class="text-blue-600 underline">View on GitHub</a>
           </div>
@@ -23,8 +19,11 @@
             <a href="https://github.com/Ryo0326-hub/tesla-lstm/tree/master" target="_blank" class="text-blue-600 underline">View on GitHub</a>
           </div>
           <div class="project-card">
-            <h4 class="text-lg font-semibold">Pizza-order-bot</h4>
-            <p class="text-sm mt-2">Programmatically orders pizza from pizzahut.</p>
+            <h4 class="text-lg font-semibold">UWJSA Website</h4>
+            <a href="https://github.com/Ryo0326-hub/uwjsa-website" target="_blank" class="text-blue-600 underline">View on GitHub</a>
+          </div>
+          <div class="project-card">
+            <h4 class="text-lg font-semibold">Pizza order Agent</h4>
             <a href="https://github.com/Ryo0326-hub/pizza-order-bot" target="_blank" class="text-blue-600 underline">View on GitHub</a>
           </div>
         </div>
@@ -32,7 +31,7 @@
     </div>
 
     <!-- Experiences Section -->
-    <div class="subsection-container experiences-bg pb-16 md:pb-20">
+    <div class="subsection-container pb-16 md:pb-20">
       <h3 class="subsection-title">Experiences</h3>
       <div class="experience-list">
         <!-- Experience 1 -->
@@ -84,13 +83,6 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.projandexp-bg {
-  background: #fff;
-  border-radius: 12px;
-  padding-top: 2.5rem;
-  padding-bottom: 5rem;
-}
-
 /* Mobile-first subsection styling */
 .subsection-container {
   max-width: 1200px;
@@ -196,12 +188,6 @@ export default defineComponent({
   padding: 1.5rem;
   margin-bottom: 1.5rem;
   border-left: 4px solid #4682B4;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.experience-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .experience-item:last-child {
@@ -286,10 +272,8 @@ export default defineComponent({
   background: url('../assets/grid.jpg') center center / cover no-repeat;
   border-radius: 12px;
   margin-bottom: 2rem;
-}
-
-.experiences-bg {
-  background: #fff;
-  border-radius: 12px;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
 }
 </style>

@@ -1,32 +1,22 @@
 <template>
   <section id="about" class="py-8 md:py-16 relative about-bg">
     <!-- About Me Title with Icon -->
-    <div class="section-header mb-4 md:mb-8">
+    <div class="section-header mb-2 md:mb-4">
       <h2>About Me</h2>
     </div>
     <!-- Photo and Main Description -->
     <div class="max-w-4xl mx-auto flex flex-col items-center px-4">
       <div class="max-w-3xl text-base md:text-lg leading-relaxed text-center space-y-3 md:space-y-4">
         <p>
-          Hi, I'm Ryo Kitano, a second-year math student at the University of Waterloo majoring in
-          Mathematical Finance and Combinatorics & Optimization. I'm passionate about applying technical and analytical
-          skills in software development and quantitative research.
+          I'm Ryo, a second year mathematics student at the University of Waterloo currently pursuing Mathematical Finance and Combinatorics & Optimization. I have a deep passion for mathematics and I aspire to apply my technical and mathematical skills in software development, quantitative research, and cryptography.
         </p>
 
         <p>
-          My love for numbers actually began much earlier than university. In 3rd grade,
-          I spent hours every day playing Pokemon on my 3DS. From these games, I learned to strategize by optimizing team compositions, analyzing the probability for
-          shiny pokemons, and beating opponents in battles. I think my game addiction during childhood has unknowingly ingrained my passion for mathematics.
+          As a kid growing up, I remember spending hours playing Pokemon on my 3DS. I think my interest in mathematics began with that. I spent time thinking through team optimization and probability calculations trying to hunt for some "shinies".
         </p>
 
         <p>
-          When I'm not building financial models, you'll find me watching NBA games. Basketball fascinates me because there are numbers everywhere.
-          I love the mathematical beauty in analyzing player performance and team mechanics.
-        </p>
-
-        <p>
-          Above all, I aspire to become a quant. I want to unveil the hidden patterns in financial data that are seamingly impossible to see.
-          I will continuously challenge myself both academically and as a person while being excited for what the future holds for me and the world.
+          My hobbies other than video games include playing basketball, swimming, reading, and hitting the gym. I'm love to learn and challenge myself whether I'm grinding through my academic coursework or doing some cool projects. I'm excited for what's to come in the future and the impact I can make with mathematics.
         </p>
       </div>
     </div>

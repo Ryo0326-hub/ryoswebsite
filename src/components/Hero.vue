@@ -35,6 +35,10 @@ export default defineComponent({ name: 'Hero' })
 </script>
 
 <style scoped>
+.bg-hero {
+  background: url('../assets/cloud.jpg') center center / cover no-repeat;
+}
+
 .contact-links {
   border-top: 1px solid #e5e7eb;
   padding-top: 1.5rem;
@@ -68,9 +72,5 @@ export default defineComponent({ name: 'Hero' })
 
 .contact-icon {
   margin-right: 0.5rem;
-}
-
-.bg-hero {
-  background: url('../assets/cloud.jpg') center center / cover no-repeat;
 }
 </style>
