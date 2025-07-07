@@ -1,7 +1,7 @@
 <template>
-  <section id="about" class="py-8 md:py-16 relative about-bg">
+  <section id="about" class="py-4 md:py-8 relative about-bg">
     <!-- About Me Title with Icon -->
-    <div class="section-header mb-2 md:mb-4">
+    <div class="section-header mb-1 md:mb-2">
       <h2>About Me</h2>
     </div>
     <!-- Photo and Main Description -->
@@ -16,7 +16,7 @@
         </p>
 
         <p>
-          My hobbies other than video games include playing basketball, swimming, reading, and hitting the gym. I'm love to learn and challenge myself whether I'm grinding through my academic coursework or doing some cool projects. I'm excited for what's to come in the future and the impact I can make with mathematics.
+          My hobbies other than video games include playing basketball, swimming, reading, and hitting the gym. I love to learn and challenge myself whether through school or doing some cool projects. I'm excited for what's to come in the future and the impact I can make with mathematics.
         </p>
       </div>
     </div>
