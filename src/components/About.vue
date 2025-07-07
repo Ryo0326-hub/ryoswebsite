@@ -8,7 +8,7 @@
     <div class="max-w-4xl mx-auto flex flex-col items-center px-4">
       <div class="max-w-3xl text-base md:text-lg leading-relaxed text-center space-y-3 md:space-y-4">
         <p>
-          I'm Ryo, a second year mathematics student at the University of Waterloo currently pursuing Mathematical Finance and Combinatorics & Optimization. I have a deep passion for mathematics and I aspire to apply my technical and mathematical skills in software development, quantitative research, and cryptography.
+          I'm Ryo, a second year mathematics student at the University of Waterloo currently pursuing Mathematical Finance and Combinatorics & Optimization. I have a deep passion for mathematics and I aspire to apply my technical and mathematical skills in AI, quantitative research, and cryptography.
         </p>
 
         <p>
